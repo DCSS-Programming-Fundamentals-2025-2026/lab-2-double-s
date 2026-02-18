@@ -9,21 +9,22 @@ namespace lab_1_double_s.Domain.Core
 {
     internal class ShowProgressReport
     {
-       public static void ShowProgressReporte()
+       public void ShowProgressReporte()
         {
-            if (Tasker.taskCount == 0)
+            Tasker tasker = new Tasker();
+            if (tasker.TaskCount == 0)
             {
                 Console.WriteLine("Задач немає.");
                 return;
             }
             int doneCount = 0;
-            for (int i = 0; i < Tasker.taskCount; i++)
+            for (int i = 0; i < tasker.TaskCount; i++)
             {
-                if (Tasker.tasks[i].IsDone)
+                if (tasker.Tasks[i].IsDone)
                 doneCount++;
             }
-            double percentage = (double)doneCount / Tasker.taskCount * 100;
-            Console.WriteLine($"\nЗвіт виконання: {percentage:F2}% (Виконано {doneCount} з {Tasker.taskCount})");
+            double percentage = (double)doneCount / tasker.TaskCount * 100;
+            Console.WriteLine($"\nЗвіт виконання: {percentage:F2}% (Виконано {doneCount} з {tasker.TaskCount})");
         }
     }
 }

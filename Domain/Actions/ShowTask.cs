@@ -5,19 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_1_double_s.Domain.Core
+namespace lab_1_double_s.Domain.Actions
 {
     public class ShowTask
     {
-       public static void ShowTaske(TodoTask[] customList = null)
+       public void ShowTaske(TodoTask[] customList = null)
         {
+            Tasker tasker = new Tasker();
             Console.WriteLine("\n    Список задач    ");
             TodoTask[] list;
             int count;
             if (customList == null)
             {
-                list = Tasker.tasks;
-                count = Tasker.taskCount;
+                list = tasker.Tasks;
+                count = tasker.TaskCount;
             }
             else
             {

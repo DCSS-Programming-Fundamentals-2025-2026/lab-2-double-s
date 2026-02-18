@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab_1_double_s.Domain.Core
+namespace lab_1_double_s.Domain.Actions
 {
     internal class AddTask
     {
-       public static void AddTaske()
+       public void AddTaske()
         {
-            if (Tasker.taskCount >= 200)
+            Tasker tasker = new Tasker();
+            if (tasker.TaskCount >= 200)
             {
                 Console.WriteLine("Помилка: Список переповнений ");
                 return;
@@ -31,8 +32,8 @@ namespace lab_1_double_s.Domain.Core
             Console.Write("Введіть кількість днів на виконання: ");
             int days = int.Parse(Console.ReadLine());
             DateTime date = DateTime.Now.AddDays(days);
-            Tasker.tasks[Tasker.taskCount] = new TodoTask(Tasker.taskCount + 1, title, priority, date);
-            Tasker.taskCount++;
+            tasker.Tasks[tasker.TaskCount] = new TodoTask(tasker.TaskCount + 1, title, priority, date);
+            tasker.TaskCount++;
 
             Console.WriteLine("Задачу додано ");
         }

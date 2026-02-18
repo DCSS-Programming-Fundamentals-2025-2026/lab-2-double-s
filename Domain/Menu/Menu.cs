@@ -1,4 +1,5 @@
-﻿using lab_1_double_s.Domain.Core;
+﻿using lab_1_double_s.Domain.Actions;
+using lab_1_double_s.Domain.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,9 @@ namespace lab_1_double_s.Domain.Menu
 {
     public class Menu
     {
-       public static void Menue()
+       public void Menue()
         {
+            DemoRunner demoRunner = new DemoRunner();
             while (true)
             {
                 Console.Clear();
@@ -26,40 +28,7 @@ namespace lab_1_double_s.Domain.Menu
                 Console.WriteLine("0. Вихід");
                 Console.Write("\n Оберіть дію: ");
 
-                string choice = Console.ReadLine();
-                switch (choice)
-                {
-                    case "1":
-                        AddTask.AddTaske(); 
-                        break;
-                    case "2":
-                        ShowTask.ShowTaske();
-                        break;
-                    case "3":
-                        EditTask.EditTaske();
-                        break;
-                    case "4":
-                        DeleteTask.DeleteTaske();
-                        break;
-                    case "5":
-                        MarkDone.MarkDonee();
-                        break;
-                    case "6":
-                        FilterTasks.FilterTaskse();
-                        break;
-                    case "7":
-                        SortTasks.SortTaskse();
-                        break;
-                    case "8":
-                        ShowProgressReport.ShowProgressReporte();
-                        break;
-                    case "0":
-                        return;
-                    default:
-                        Console.WriteLine("Невірний вибір ");
-                        break;
-                }
-                Console.ReadKey();
+                demoRunner.DemoRunnere();
             }
         }
     }

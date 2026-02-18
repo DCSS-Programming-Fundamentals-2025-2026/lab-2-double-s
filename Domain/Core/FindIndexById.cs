@@ -9,11 +9,12 @@ namespace lab_1_double_s.Domain.Core
 {
     internal class FindIndexById
     {
-        public static int FindIndexByIde(int id)
+        public int FindIndexByIde(int id)
         {
-            for (int i = 0; i < Tasker.taskCount; i++)
+            Tasker tasker = new Tasker();
+            for (int i = 0; i < tasker.TaskCount; i++)
             {
-                if (Tasker.tasks[i].Id == id)
+                if (tasker.Tasks[i].Id == id)
                     return i;
             }
             return -1;

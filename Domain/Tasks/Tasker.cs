@@ -8,8 +8,8 @@ namespace lab_1_double_s.Domain.Tasks
 {
     internal class Tasker
     {
-        public static TodoTask[] tasks = new TodoTask[200];
-        public static int taskCount = 0;
+        public TodoTask[] Tasks = new TodoTask[200];
+        public int TaskCount = 0;
     
     }
     
