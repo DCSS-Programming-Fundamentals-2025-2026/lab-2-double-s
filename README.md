@@ -1,1 +1,2 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/k-3ge8pq)
+QA - Кеба Софія. Щоб запустити тест нам потрібно на верхній панелі знайти слово Test, натиснути на нього, потім ми побачимо зверху в сплившому вікні Run All Tests, і натискаємо на нього. У нас відкриється вікно Test Explorer і там вже будемо дивитися результат.
+Core - Лущай Софія
