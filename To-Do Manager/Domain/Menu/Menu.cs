@@ -1,8 +1,8 @@
-﻿namespace lab_1_double_s.Domain.Menu
+namespace lab_1_double_s.Domain.Menu
 {
     public class Menu
     {
-       public void Menue()
+        public void Menue()
         {
             DemoRunner demoRunner = new DemoRunner();
             while (true)
@@ -17,6 +17,9 @@
                 Console.WriteLine("6. Фільтр (Виконані / Невиконані)");
                 Console.WriteLine("7. Сортувати за пріоритетністю");
                 Console.WriteLine("8. Звіт по прогресу ");
+                Console.WriteLine("9.Статистика колекції (Enumerator)");
+                Console.WriteLine("10. Сортувати за назвою (IComparable)");
+                Console.WriteLine("11. Сортувати за пріоритетом (IComparer)");
                 Console.WriteLine("0. Вихід");
                 Console.Write("\n Оберіть дію: ");
 
