@@ -1,31 +1,6 @@
-﻿using lab_1_double_s.Domain.Interface;
-using lab_1_double_s.Domain.Item;
+﻿using System;
 
-namespace lab_1_double_s.Domain.Item
-{
-    public abstract class BaseItem
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public BaseItem(int id, string title)
-        {
-            Id = id;
-            Title = title;
-        }
-        public abstract string GetInfo();
-    }
-}
-
-namespace lab_1_double_s.Domain.Interface
-{
-    public interface ISortable
-    {
-        double GetPriority();
-    }
-}
-
-
-namespace lab_1_double_s.Domain.Tasks
+namespace TaskApp.Models
 {
     public class TodoTask : BaseItem, ISortable
     {

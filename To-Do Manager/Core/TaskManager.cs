@@ -1,5 +1,7 @@
-﻿using lab_1_double_s.Domain.Tasks;
-namespace lab_1_double_s.Domain.Core
+﻿using System;
+using TaskApp.Models;
+
+namespace TaskApp.Core
 {
     public class TaskManager
     {
@@ -8,7 +10,10 @@ namespace lab_1_double_s.Domain.Core
 
         public bool AddTask(string title, int priority, int days)
         {
-            if (TaskCount >= 200) return false;
+            if (TaskCount >= 200)
+            {
+                return false;
+            }
 
             DateTime date = DateTime.Now.AddDays(days);
             Tasks[TaskCount] = new TodoTask(TaskCount + 1, title, priority, date);
@@ -20,7 +25,10 @@ namespace lab_1_double_s.Domain.Core
         {
             for (int i = 0; i < TaskCount; i++)
             {
-                if (Tasks[i].Id == id) return i;
+                if (Tasks[i].Id == id)
+                {
+                    return i;
+                }
             }
             return -1;
         }
@@ -44,7 +52,10 @@ namespace lab_1_double_s.Domain.Core
         public bool EditTaskTitle(int id, string newTitle)
         {
             int idx = FindIndexById(id);
-            if (idx == -1) return false;
+            if (idx == -1)
+            {
+                return false;
+            }
             Tasks[idx].Title = newTitle;
             return true;
         }
@@ -52,7 +63,10 @@ namespace lab_1_double_s.Domain.Core
         public bool EditTaskPriority(int id, int newPriority)
         {
             int idx = FindIndexById(id);
-            if (idx == -1) return false;
+            if (idx == -1)
+            {
+                return false;
+            }
             Tasks[idx].Priority = newPriority;
             return true;
         }
@@ -60,7 +74,10 @@ namespace lab_1_double_s.Domain.Core
         public bool EditTaskDate(int id, int days)
         {
             int idx = FindIndexById(id);
-            if (idx == -1) return false;
+            if (idx == -1)
+            {
+                return false;
+            }
             Tasks[idx].Date = DateTime.Now.AddDays(days);
             return true;
         }

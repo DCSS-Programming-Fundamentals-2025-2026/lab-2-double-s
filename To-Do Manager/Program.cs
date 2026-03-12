@@ -1,14 +1,15 @@
-﻿using lab_1_double_s;
-using lab_1_double_s.Domain.Menu;
-
-class Program
+﻿using TaskApp.ConsoleUI;
+namespace TaskApp
 {
-    static void Main(string[] args)
+    class Program
     {
-        Console.InputEncoding = System.Text.Encoding.UTF8;
-        Console.OutputEncoding = System.Text.Encoding.UTF8;
-        Menu menu = new Menu();
-        menu.Menue();
+        static void Main(string[] args)
+        {
+            Console.InputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
+            AppRunner runner = new AppRunner();
+            runner.Start();
+        }
     }
 }
-           
